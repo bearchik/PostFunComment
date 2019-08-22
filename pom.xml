@@ -6,11 +6,11 @@
     <artifactId>PostFunComment</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <organization>
-        <name>Example Company</name>
-        <url>http://www.example.com/</url>
+        <name>Fitomarket</name>
+        <url>https://fitomarket.ru/</url>
     </organization>
-    <name>PostFunComment</name>
-    <description>This is the ru.bearchik.plugin:PostFunComment plugin for Atlassian JIRA.</description>
+    <name>PostFunction Commit</name>
+    <description>This is the Commit Post Function plugin for Atlassian JIRA.</description>
     <packaging>atlassian-plugin</packaging>
     <dependencies>
         <dependency>

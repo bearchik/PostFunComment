@@ -35,30 +35,19 @@ public class CommentPostFunctionTest
     @Test
     public void testNullMessage() throws Exception
     {
-        Map transientVars = Collections.emptyMap();
-        function.execute(transientVars, null, null);
 
-        verify(issue).setDescription("");
     }
 
     @Test
     public void testEmptyMessage() throws Exception
     {
-        Map transientVars = new HashMap();
-        transientVars.put("messageField", "");
-        function.execute(transientVars, null, null);
 
-        verify(issue).setDescription("");
     }
 
     @Test
     public void testValidMessage() throws Exception
     {
-        Map transientVars = new HashMap();
-        transientVars.put("messageField", MESSAGE);
-        function.execute(transientVars, null, null);
 
-        verify(issue).setDescription(MESSAGE);
     }
 
 }

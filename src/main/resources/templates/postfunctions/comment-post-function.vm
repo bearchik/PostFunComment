@@ -1,1 +1,1 @@
-Logs the message '$messageField'
+User <b>$from_comment_field</b> create comment <b>$comment_text_area</b>.

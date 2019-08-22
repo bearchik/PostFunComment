@@ -1,8 +1,20 @@
-<tr>
-    <td class="fieldLabelArea">
-        Message:
-    </td>
-    <td nowrap>
-        <input name="messageField" id="messageField" value="$messageField" />
-    </td>
-</tr>
+<fieldset class="comment-edit-group" rel="comment">
+    <p><b>From user:</b></p>
+    <fieldset rel="from_comment_field" class="hidden user-picker-params">
+        <input title="fieldName" type="hidden" value="from_comment_field" />
+        <input title="multiSelect" type="hidden" value="false" />
+        <input title="userPickerEnabled" type="hidden" value="true" />    </fieldset>
+        <div class="ajax_autocomplete" id="from_comment_field_container">
+            <input class="text long-field userpickerfield" id="from_comment_field" name="from_comment_field" style=" width: 20%;" type="text" value="$from_comment_field" />
+            <a href="#" class="popup-trigger">
+        <span class="icon-default aui-icon aui-icon-small aui-iconfont-admin-roles" title="Select a user"></span></a>
+        <div class="ajax_results" id="from_comment_field_results"></div>
+        <div class="description">Start typing to get a list matches.</div>
+        </div>
+    </div>
+
+    <p><b>Enter your comment:</b></p>
+    <textarea rows="10" cols="60" class="text" id="comment_text_area" name="comment_text_area" value="">$!textutils.htmlEncode($comment_text_area)</textarea>
+
+
+</fieldset>
