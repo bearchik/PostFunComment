@@ -9,8 +9,8 @@
         <name>Fitomarket</name>
         <url>https://fitomarket.ru/</url>
     </organization>
-    <name>PostFunction Commit</name>
-    <description>This is the Commit Post Function plugin for Atlassian JIRA.</description>
+    <name>PostFunction Comment</name>
+    <description>This is the Comment Post Function plugin for Atlassian JIRA.</description>
     <packaging>atlassian-plugin</packaging>
     <dependencies>
         <dependency>
