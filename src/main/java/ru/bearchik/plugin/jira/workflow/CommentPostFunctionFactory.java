@@ -38,6 +38,7 @@ public class CommentPostFunctionFactory extends AbstractWorkflowPluginFactory im
         final JiraWorkflow jiraWorkflow = workflowManager.getWorkflow(myParams.get("workflowName")[0]);
 
         //the default message
+        velocityParams.put(FIELD_FROM, "admin");
         velocityParams.put(FIELD_COMMENT, "Enter default comment.");
 
     }

@@ -7,6 +7,7 @@ import com.atlassian.jira.bc.user.search.UserSearchParams;
 import com.atlassian.jira.bc.user.search.UserSearchService;
 import com.atlassian.jira.component.ComponentAccessor;
 import com.atlassian.jira.issue.MutableIssue;
+import com.atlassian.jira.issue.comments.CommentManager;
 import com.atlassian.jira.user.ApplicationUser;
 import com.atlassian.jira.workflow.function.issue.AbstractJiraFunctionProvider;
 import com.opensymphony.module.propertyset.PropertySet;
@@ -23,13 +24,18 @@ public class CommentPostFunction extends AbstractJiraFunctionProvider
 {
     private static final Logger log = LoggerFactory.getLogger(CommentPostFunction.class);
     public static final String FIELD_FROM = "from_comment_field";
+    public static final String FIELD_COMMENT = "comment_text_area";
 
     public void execute(Map transientVars, Map args, PropertySet ps) throws WorkflowException
     {
 
         MutableIssue issue = getIssue(transientVars);
+        CommentManager commentManager = ComponentAccessor.getCommentManager();
         String fromuser = (String)args.get(FIELD_FROM);
-        checkUserInJira(fromuser).getUsername();
+
+        if (checkUserInJira(fromuser).getUsername() != null) {
+            commentManager.create(issue, checkUserInJira(fromuser).getUsername(), (String)args.get(FIELD_COMMENT),true );
+        }
 
     }
 
